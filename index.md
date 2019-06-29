@@ -3,7 +3,7 @@
 
 I am Agnel Vishal. I can do web apps for you provided I am paid decently.
 
-I run <a href="http://sarchy.tech">Sarchy</a> and <a href="https://searx.world">Searx.World></a> which are forked open source search engines.
+I run <a href="http://sarchy.tech">Sarchy</a> and <a href="https://searx.world">Searx.World</a> which are forked open source search engines.
 
 I have also made
 * <a href="https://kali-tv.com ">kali-tv</a>
