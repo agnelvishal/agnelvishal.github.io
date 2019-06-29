@@ -3,13 +3,13 @@
 
 I am Agnel Vishal. I can do web apps for you provided I am paid decently.
 
-I run https://searx.world and http://sarchy.tech which are forked open source search engines.
+I run <a href="http://sarchy.tech">Sarchy</a> and <a href="https://searx.world">Searx.World></a> which are forked open source search engines.
 
 I have also made
-* https://kali-tv.com 
-* https://agnelvishal.github.io/TrustingTrust (A forked psychology game)
-* https://propertyheadlines.co 
-* http://condense.press
+* <a href="https://kali-tv.com ">kali-tv</a>
+* <a href="https://agnelvishal.github.io/TrustingTrust"> Trusting Trust(A forked psychology game) </a>
+* <a href="https://propertyheadlines.co"> Property Headlines </a> 
+* <a href="http://condense.press">Condense.Press</a>
 
 Contact me at 
 * <a href="mailto:agnelvishal@gmail.com">agnelvishal@gmail.com</a>
