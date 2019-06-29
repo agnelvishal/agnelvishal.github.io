@@ -14,5 +14,5 @@ I have also made
 Contact me at 
 * <a href="mailto:agnelvishal@gmail.com">agnelvishal@gmail.com</a>
 * <a href="https://www.linkedin.com/in/agnel-vishal-3a419694">LinkedIn/agnelvishal</a> 
-* <a href="https://fosstodon.org/@agnelvishal">  Mastadon/agnelvishal </a>(Open Source alternate to Facebook)
+* <a href="https://fosstodon.org/@agnelvishal">Mastadon/agnelvishal</a>(Open Source alternate to Facebook)
 
