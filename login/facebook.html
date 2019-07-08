@@ -14,6 +14,13 @@
       
     FB.AppEvents.logPageView();   
       
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log(response.authResponse.accessToken);
+  }
+});
+    
+    
   };
 
   (function(d, s, id){
@@ -23,14 +30,9 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
+
   
-  <script>
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    console.log(response.authResponse.accessToken);
-  }
-});
+
   </script>
 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 </body>
