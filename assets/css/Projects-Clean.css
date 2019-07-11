@@ -38,7 +38,7 @@
 .projects-clean .item {
   text-align: center;
   padding-top: 50px;
-  min-height: 425px;
+  min-height: 125px;
 }
 
 .projects-clean .item .name {
@@ -53,6 +53,5 @@
   margin-top: 15px;
   margin-bottom: 0;
   letter-spacing: 1px;
-
 }
 

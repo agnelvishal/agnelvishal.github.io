@@ -12,6 +12,32 @@
     border-radius: 15% !important;
 }
 
+@media (max-width: 520px) {
+    .intro img.rounded-circle {
+        position: relative;
+        right: 40%;
+    }
+    img.rounded-circle {
+        height: 70px !important;
+        width: 70px !important;
+    }
+}
+
+img.rounded-circle {
+    height: 160px;
+    width: 160px;
+}
+
+
+@media (max-width: 520px) {
+    h3, h2 {
+        font-size: .9rem !important;
+    }
+    .box p.title {
+        font-size: .5rem !important;
+    }
+}
+
 body {
     background-color: #eef4f7;
     font-family: 'Nunito', sans-serif;
@@ -29,7 +55,7 @@ div#me {
     margin: 5px;
 }
 
-@media (min-width: 200px) {
+@media (min-width: 500px) {
     .col-lg-4 {
         max-width: 45%;
     }
