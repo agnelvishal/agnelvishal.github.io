@@ -52,7 +52,7 @@ div#me {
 
 .projects .item {
     background-color: white;
-    margin: 5px;
+    margin: 10px 10px 15px 10px;
 }
 
 @media (min-width: 500px) {
@@ -63,7 +63,7 @@ div#me {
 
 @media (min-width: 992px) {
     .col-lg-4 {
-        max-width: 32%;
+        max-width: 31%;
     }
 }
 
