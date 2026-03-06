@@ -331,7 +331,7 @@ window.addEventListener('scroll', debouncedScroll);
             // Start coloring only when the image's bottom edge is near the center of the viewport
             const imageHeight = rect.height;
             // Transition starts when image top reaches 80% down the viewport, ends when fully visible
-            const startThreshold = viewportHeight * 0.65;
+            const startThreshold = viewportHeight * 0.55;
             const endThreshold = viewportHeight * 0;
             const visiblePx = startThreshold - rect.top;
             const totalRange = startThreshold - endThreshold;
