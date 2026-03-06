@@ -328,10 +328,15 @@ window.addEventListener('scroll', debouncedScroll);
             // We want to transition as the image scrolls from bottom of viewport to fully visible
 
             // Progress: 0 = image just entering from bottom, 1 = image fully in view
+            // Start coloring only when the image's bottom edge is near the center of the viewport
             const imageHeight = rect.height;
-            const visiblePx = viewportHeight - rect.top;
-            const progress = Math.min(1, Math.max(0, visiblePx / (imageHeight * 1.2)));
-            console.log(progress);
+            // Transition starts when image top reaches 80% down the viewport, ends when fully visible
+            const startThreshold = viewportHeight * 0.65;
+            const endThreshold = viewportHeight * 0;
+            const visiblePx = startThreshold - rect.top;
+            const totalRange = startThreshold - endThreshold;
+            const progress = Math.min(1, Math.max(0, visiblePx / totalRange));
+            // console.log(progress);
 
             const grayscaleAmount = 1 - progress;
             img.style.filter = `grayscale(${grayscaleAmount.toFixed(3)})`;
