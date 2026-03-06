@@ -186,17 +186,6 @@ projectCards.forEach(card => {
     });
 });
 
-// ===== Parallax Effect for Hero Shapes =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const shapes = document.querySelectorAll('.shape');
-
-    shapes.forEach((shape, index) => {
-        const speed = (index + 1) * 0.1;
-        shape.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
 // ===== Cursor Trail Effect (Optional - Subtle) =====
 let cursorTrail = [];
 const trailLength = 10;
