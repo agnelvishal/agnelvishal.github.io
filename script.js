@@ -32,16 +32,16 @@ const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (window.scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -67,7 +67,7 @@ let typingSpeed = 100;
 
 function typeWriter() {
     const currentPhrase = phrases[phraseIndex];
-    
+
     if (isDeleting) {
         typewriterText.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -77,7 +77,7 @@ function typeWriter() {
         charIndex++;
         typingSpeed = 100;
     }
-    
+
     if (!isDeleting && charIndex === currentPhrase.length) {
         // Pause at end of phrase
         typingSpeed = 2000;
@@ -87,7 +87,7 @@ function typeWriter() {
         phraseIndex = (phraseIndex + 1) % phrases.length;
         typingSpeed = 500;
     }
-    
+
     setTimeout(typeWriter, typingSpeed);
 }
 
@@ -101,7 +101,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        
+
         if (target) {
             const offsetTop = target.offsetTop - 80;
             window.scrollTo({
@@ -128,7 +128,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for scroll animations
 const animateOnScroll = document.querySelectorAll(
-    '.service-card, .project-card, .timeline-item, .opensource-item, .about-content, .contact-content'
+    '.service-card, .project-card, .opensource-item, .about-content, .contact-content'
 );
 
 animateOnScroll.forEach(el => {
@@ -156,10 +156,10 @@ buttons.forEach(button => {
         const rect = button.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        
+
         button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
     });
-    
+
     button.addEventListener('mouseleave', () => {
         button.style.transform = 'translate(0, 0)';
     });
@@ -171,16 +171,16 @@ projectCards.forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = (y - centerY) / 20;
         const rotateY = (centerX - x) / 20;
-        
+
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
     });
-    
+
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
     });
@@ -190,7 +190,7 @@ projectCards.forEach(card => {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const shapes = document.querySelectorAll('.shape');
-    
+
     shapes.forEach((shape, index) => {
         const speed = (index + 1) * 0.1;
         shape.style.transform = `translateY(${scrolled * speed}px)`;
@@ -203,7 +203,7 @@ const trailLength = 10;
 
 document.addEventListener('mousemove', (e) => {
     cursorTrail.push({ x: e.clientX, y: e.clientY });
-    
+
     if (cursorTrail.length > trailLength) {
         cursorTrail.shift();
     }
@@ -231,7 +231,7 @@ projectLinks.forEach(link => {
 // ===== Lazy Loading for Better Performance =====
 if ('IntersectionObserver' in window) {
     const lazyElements = document.querySelectorAll('.lazy-load');
-    
+
     const lazyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -240,7 +240,7 @@ if ('IntersectionObserver' in window) {
             }
         });
     });
-    
+
     lazyElements.forEach(el => lazyObserver.observe(el));
 }
 
