@@ -602,7 +602,16 @@ section {
     height: 200px;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
-    transition: var(--transition);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: grayscale(100%);
+    animation: colorize linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+}
+
+@keyframes colorize {
+    from { filter: grayscale(100%); }
+    to   { filter: grayscale(0%); }
 }
 
 .project-card:hover img {
