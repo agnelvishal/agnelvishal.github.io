@@ -314,6 +314,48 @@ const debouncedScroll = debounce(() => {
 
 window.addEventListener('scroll', debouncedScroll);
 
+// ===== Grayscale to Color on Scroll for Project Images =====
+(function () {
+    const projectImages = document.querySelectorAll('.project-card img');
+
+    function updateGrayscale() {
+        const viewportHeight = window.innerHeight;
+
+        projectImages.forEach(img => {
+            const rect = img.getBoundingClientRect();
+            // Image top enters viewport at rect.top = viewportHeight
+            // Image is fully visible when rect.bottom <= viewportHeight and rect.top >= 0
+            // We want to transition as the image scrolls from bottom of viewport to fully visible
+
+            // Progress: 0 = image just entering from bottom, 1 = image fully in view
+            const imageHeight = rect.height;
+            const visiblePx = viewportHeight - rect.top;
+            const progress = Math.min(1, Math.max(0, visiblePx / (imageHeight * 1.2)));
+            console.log(progress);
+
+            const grayscaleAmount = 1 - progress;
+            img.style.filter = `grayscale(${grayscaleAmount.toFixed(3)})`;
+        });
+    }
+
+    // Run on scroll using requestAnimationFrame for performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateGrayscale();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Run once on load to set initial state
+    window.addEventListener('load', updateGrayscale);
+    // Also run on DOMContentLoaded in case images are already in view
+    updateGrayscale();
+})();
+
 // ===== Console Welcome Message =====
 console.log('%c👋 Welcome to Agnel Vishal\'s Portfolio!', 'color: #4a90e2; font-size: 20px; font-weight: bold;');
 console.log('%cInterested in working together? Reach out at agnelvishal@gmail.com', 'color: #666; font-size: 14px;');
